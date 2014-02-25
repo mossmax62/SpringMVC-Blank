@@ -21,7 +21,7 @@ public class InventoryControllerTests extends TestCase {
         assertEquals("hello", modelAndView.getViewName());
         assertNotNull(modelAndView.getModel());
         
-        @SuppressWarnings("uncheked")
+        @SuppressWarnings("unchecked")
         Map<String, Object> modelMap =(Map<String, Object>)modelAndView.getModel().get("model"); 
         
         String nowValue = (String) modelMap.get("now");
