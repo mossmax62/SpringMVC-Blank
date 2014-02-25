@@ -6,7 +6,7 @@ import cl.max.acf.spring_mvc.domain.Product;
 
 public interface ProductDao {
 	
-	public List<Product> getProductsList();
+	public List<Product> getProductList();
 	public void saveProduct(Product prod);
 
 }

@@ -1,4 +1,4 @@
-package cl.max.acf.springmvc_acf.web;
+package cl.max.acf.spring_mvc.web;
 
 import java.util.Map;
 

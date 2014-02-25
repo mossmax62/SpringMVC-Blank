@@ -23,7 +23,7 @@ public class JPAProductDao implements ProductDao{
 
 	@Transactional(readOnly=true)
 	@SuppressWarnings("unchecked")
-	public List<Product> getProductsList() {
+	public List<Product> getProductList() {
 		// TODO Auto-generated method stub
 		return em.createQuery("select p from Product p order by p.id").getResultList();
 	}
