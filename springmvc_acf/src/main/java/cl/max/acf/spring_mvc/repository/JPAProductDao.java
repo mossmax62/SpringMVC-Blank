@@ -26,6 +26,17 @@ public class JPAProductDao implements ProductDao{
 	public List<Product> getProductList() {
 		// TODO Auto-generated method stub
 		return em.createQuery("select p from Product p order by p.id").getResultList();
+		
+		
+		
+	}
+	
+	@Transactional(readOnly=true)
+	@SuppressWarnings("unchecked")
+	public List<Product> getProductWhereNameLike(String name) {
+		// TODO Auto-generated method stub
+		return em.createQuery("select p from Product p where p.description LIKE :prodName order by p.id").setParameter("prodName", name).getResultList();
+
 	}
 
 	@Transactional(readOnly=false)

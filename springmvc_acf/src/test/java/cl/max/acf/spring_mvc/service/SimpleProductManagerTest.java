@@ -24,6 +24,9 @@ public class SimpleProductManagerTest {
 	private static Double TABLE_PRICE =new Double(150.10);
 	private static String TABLE_DESCRIPTION ="Table";
 	
+	private static Double LAMP_PRICE =new Double(50.10);
+	private static String LAMP_DESCRIPTION ="Lamp";
+	
 	private static int POSITIVE_PRICE_INCREASE = 10;
 	
 
@@ -48,6 +51,8 @@ public class SimpleProductManagerTest {
 		
 		
 	}
+	
+	
 	
 	@Test
     public void testIncreasePriceWithNullListOfProducts() {
