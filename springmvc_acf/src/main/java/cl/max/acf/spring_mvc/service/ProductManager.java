@@ -9,5 +9,7 @@ public interface ProductManager extends Serializable{
 	
 	public void increasePrice(int percentage);
 	
+	public List<Product> getProductByName(String name);
+	
 	public List<Product> getProducts();
 }

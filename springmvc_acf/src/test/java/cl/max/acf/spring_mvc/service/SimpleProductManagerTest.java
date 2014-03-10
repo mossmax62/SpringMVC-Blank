@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import cl.max.acf.spring_mvc.domain.Product;
+import cl.max.acf.spring_mvc.repository.InMemoryProductDao;
+import cl.max.acf.spring_mvc.repository.ProductDao;
 import cl.max.acf.spring_mvc.service.SimpleProductManager;
 
 public class SimpleProductManagerTest {
@@ -47,7 +49,10 @@ public class SimpleProductManagerTest {
 		product.setPrice(TABLE_PRICE);
 		products.add(product);
 		
-		productManager.setProducts(products);
+		ProductDao productDao = new InMemoryProductDao(products);
+		productManager.setProductDao(productDao);
+
+		//productManager.setProducts(products);
 		
 		
 	}
@@ -58,6 +63,7 @@ public class SimpleProductManagerTest {
     public void testIncreasePriceWithNullListOfProducts() {
         try {
             productManager = new SimpleProductManager();
+            productManager.setProductDao(new InMemoryProductDao(null));
             productManager.increasePrice(POSITIVE_PRICE_INCREASE);
         }
         catch(NullPointerException ex) {
@@ -69,6 +75,7 @@ public class SimpleProductManagerTest {
     public void testIncreasePriceWithEmptyListOfProducts() {
         try {
             productManager = new SimpleProductManager();
+            productManager.setProductDao(new InMemoryProductDao(null));
             productManager.setProducts(new ArrayList<Product>());
             productManager.increasePrice(POSITIVE_PRICE_INCREASE);
         }
@@ -97,6 +104,7 @@ public class SimpleProductManagerTest {
 	@Test
 	public void testGetProductsWithNoProducts() {
 		productManager = new SimpleProductManager();
+		productManager.setProductDao(new InMemoryProductDao(null));
 		assertNull(productManager.getProducts());
 	}
 	

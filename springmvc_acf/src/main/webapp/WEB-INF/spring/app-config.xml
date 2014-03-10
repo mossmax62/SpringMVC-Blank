@@ -11,32 +11,7 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-      
-       
-       <bean id="productManager" class="cl.max.acf.spring_mvc.service.SimpleProductManager">
-       <property name="products">
-       <list>
-       <ref bean="product1"/>
-       <ref bean="product2"/>
-       <ref bean="product3"/>
-       </list>
-       </property>
-       </bean>
-       
-       <bean id="product1" class="cl.max.acf.spring_mvc.domain.Product">
-         <property name="description" value="Lampara con diseños"/>
-         <property name="price" value="5.75"/>
-       </bean>
-        
-       <bean id="product2" class="cl.max.acf.spring_mvc.domain.Product">
-         <property name="description" value="Mesa de comedor"/>
-         <property name="price" value="75.25"/>
-       </bean>
 
-       <bean id="product3" class="cl.max.acf.spring_mvc.domain.Product">
-         <property name="description" value="Silla de comedor"/>
-         <property name="price" value="22.79"/>
-       </bean>
        
        <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
          <property name="basename" value="messages"/>
