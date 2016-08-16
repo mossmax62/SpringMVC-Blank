@@ -1,4 +1,4 @@
-cl.max.acf.springmvc
-====================
+Spring MVC Blank Application
+============================
 
-Spring MVC app for learning purposes 
+Spring MVC Blank app for learning purposes and proyect temaplates
